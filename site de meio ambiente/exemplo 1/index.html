@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoNatureza | Preservação Ambiental & Conscientização</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Conectando o arquivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- BARRA DE NAVEGAÇÃO SUPERIOR -->
+    <header>
+        <div class="nav-container">
+            <div class="brand" onclick="navigateTo('home')">
+                <div class="brand-icon">🌿</div>
+                <span>EcoNatureza</span>
+            </div>
+            <nav class="nav-links">
+                <button class="nav-btn active" id="btn-home" onclick="navigateTo('home')">Início</button>
+                <button class="nav-btn" id="btn-botanica" onclick="navigateTo('botanica')">Botânica</button>
+                <button class="nav-btn" id="btn-hidrografia" onclick="navigateTo('hidrografia')">Mares</button>
+                <button class="nav-btn" id="btn-conservacao" onclick="navigateTo('conservacao')">Conservação</button>
+                <button class="nav-btn" id="btn-animais" onclick="navigateTo('animais')">Animais</button>
+                <button class="nav-btn" id="btn-fisiologia" onclick="navigateTo('fisiologia')">Árvores</button>
+                <button class="nav-btn" id="btn-zonas" onclick="navigateTo('zonas')">Zonas Oceânicas</button>
+                <button class="nav-btn" id="btn-ciclos" onclick="navigateTo('ciclos')">Ciclos</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- =========================================================
+             PÁGINA 1: PÁGINA INICIAL (HOME)
+        ========================================================= -->
+        <section id="page-home" class="page active">
+            <h1 class="page-title">Página Inicial</h1>
+
+            <!-- Painel Superior de Indicadores -->
+            <div class="white-panel">
+                <div class="panel-header">
+                    <h3>🌍 Preservação Ambiental & Conscientização Ecológica</h3>
+                    <p>Explore indicadores vitais da biodiversidade e clique em qualquer imagem para abrir a explicação detalhada do tema.</p>
+                </div>
+                <div class="stats-row">
+                    <div class="stat-pill">+12.400<br><small>Árvores Monitoradas</small></div>
+                    <div class="stat-pill">98,4%<br><small>Bacias Monitoradas</small></div>
+                    <div class="stat-pill">1.250+<br><small>Espécies Catalogadas</small></div>
+                    <div class="stat-pill">100%<br><small>Consciência Coletiva</small></div>
+                </div>
+            </div>
+
+            <!-- Título Central -->
+            <div class="hero-intro">
+                <span class="center-badge">Preservação da Natureza</span>
+                <h2>Preservação Ambiental & Conscientização</h2>
+                <p>A sobrevivência de todos os biomas terrestres depende do equilíbrio entre florestas, bacias hidrográficas e a fauna silvestre. Clique nas imagens para ver as explicações completas.</p>
+            </div>
+
+            <!-- 3 Cards Principais Clicáveis -->
+            <div class="three-cards-grid">
+                <!-- Card 1 -->
+                <div class="topic-card">
+                    <div class="topic-img-wrap" onclick="navigateTo('botanica')">
+                        <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=700&q=80" alt="Botânica e Clima">
+                        <span class="img-overlay-hint">Saiba mais →</span>
+                    </div>
+                    <h4>🌳 Botânica & Clima</h4>
+                    <p>Florestas Nativas & Regulação Climática. As florestas nativas funcionam como reguladores térmicos naturais do planeta e garantem a estabilidade pluviométrica através da evapotranspiração.</p>
+                    <button class="card-footer-btn" onclick="navigateTo('botanica')">
+                        🌿 Botânica & Clima<br>Florestas Nativas & Regulação Climática
+                    </button>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="topic-card">
+                    <div class="topic-img-wrap" onclick="navigateTo('hidrografia')">
+                        <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=700&q=80" alt="Hidrografia e Mares">
+                        <span class="img-overlay-hint">Saiba mais →</span>
+                    </div>
+                    <h4>🌊 Hidrografia & Mares</h4>
+                    <p>Oceanos, Recifes de Coral & Vida Marinha. Os oceanos absorvem cerca de 30% do dióxido de carbono antropogênico e sustentam toda a base da cadeia alimentar marinha e global.</p>
+                    <button class="card-footer-btn" onclick="navigateTo('hidrografia')">
+                        💧 Hidrografia & Mares<br>Oceanos, Recifes de Coral & Vida Marinha
+                    </button>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="topic-card">
+                    <div class="topic-img-wrap" onclick="navigateTo('conservacao')">
+                        <img src="https://images.unsplash.com/photo-1484406566174-9da000fda645?auto=format&fit=crop&w=700&q=80" alt="Biologia da Conservação">
+                        <span class="img-overlay-hint">Saiba mais →</span>
+                    </div>
+                    <h4>🦌 Biologia da Conservação</h4>
+                    <p>Equilíbrio dos Ecossistemas. A biodiversidade representa a riqueza e variedade da vida em todos os ecossistemas terrestres e marinhos, essencial para o equilíbrio natural.</p>
+                    <button class="card-footer-btn" onclick="navigateTo('conservacao')">
+                        🦋 Biologia da Conservação<br>Biodiversidade Global & Redes Ecológicas
+                    </button>
+                </div>
+            </div>
+
+            <!-- Enciclopédia da Natureza -->
+            <div class="white-panel">
+                <div class="panel-header">
+                    <h3>📚 Enciclopédia da Natureza: Divisões e Fisiologia em Detalhes</h3>
+                    <p>Explore o funcionamento biológico profundo dos animais, das árvores e florestas, da vida marinha e dos ciclos planetários.</p>
+                </div>
+                <div class="encyclopedia-grid">
+                    <button class="encyc-btn" onclick="navigateTo('animais')">Divisão dos Animais</button>
+                    <button class="encyc-btn" onclick="navigateTo('fisiologia')">Árvores & Fisiologia Vegetal</button>
+                    <button class="encyc-btn" onclick="navigateTo('zonas')">Vida Marinha & Zonas Oceânicas</button>
+                    <button class="encyc-btn" onclick="navigateTo('ciclos')">Ciclos & Conexão Global</button>
+                </div>
+            </div>
+
+            <!-- Os 6 Grandes Biomas Continentais -->
+            <div class="white-panel">
+                <div class="panel-header">
+                    <h3>🌎 Os 6 Grandes Biomas Continentais</h3>
+                    <p>Conheça as particularidades de cada ecossistema brasileiro e suas espécies-chave.</p>
+                </div>
+                <div class="biomes-grid">
+                    <div class="biome-box">
+                        <div class="biome-top">
+                            <strong>🌿 Amazônia</strong>
+                            <span class="biome-tag">Maior Floresta</span>
+                        </div>
+                        <p>Maior bacia hidrográfica e reservatório de biodiversidade do planeta. Essencial para o regime de chuvas continentais.</p>
+                        <div class="biome-species">Espécies-chave: Onça-pintada, Vitória-régia, Castanheira.</div>
+                    </div>
+
+                    <div class="biome-box">
+                        <div class="biome-top">
+                            <strong>🌳 Mata Atlântica</strong>
+                            <span class="biome-tag">Hotspot Global</span>
+                        </div>
+                        <p>Abriga mais de 20.000 espécies vegetais e fornece água potável para mais de 145 milhões de pessoas.</p>
+                        <div class="biome-species">Espécies-chave: Mico-leão-dourado, Pau-brasil, Jussara.</div>
+                    </div>
+
+                    <div class="biome-box">
+                        <div class="biome-top">
+                            <strong>🌾 Cerrado</strong>
+                            <span class="biome-tag">Berço das Águas</span>
+                        </div>
+                        <p>Savana mais rica do mundo em biodiversidade. Abriga as nascentes das três maiores bacias hidrográficas sul-americanas.</p>
+                        <div class="biome-species">Espécies-chave: Lobo-guará, Tamanduá-bandeira, Pequizeiro.</div>
+                    </div>
+
+                    <div class="biome-box">
+                        <div class="biome-top">
+                            <strong>🐊 Pantanal</strong>
+                            <span class="biome-tag">Maior Área Úmida</span>
+                        </div>
+                        <p>Maior planície inundável contínua do globo, com a mais alta densidade de fauna silvestre das Américas.</p>
+                        <div class="biome-species">Espécies-chave: Arara-azul-grande, Tuiuiú, Capivara.</div>
+                    </div>
+
+                    <div class="biome-box">
+                        <div class="biome-top">
+                            <strong>🌵 Caatinga</strong>
+                            <span class="biome-tag">100% Exclusivo</span>
+                        </div>
+                        <p>Único bioma exclusivamente brasileiro, com fauna e flora super adaptadas a períodos prolongados de seca.</p>
+                        <div class="biome-species">Espécies-chave: Asa-branca, Tatu-bola, Mandacaru.</div>
+                    </div>
+
+                    <div class="biome-box">
+                        <div class="biome-top">
+                            <strong>🌱 Pampa</strong>
+                            <span class="biome-tag">Campos Sulinos</span>
+                        </div>
+                        <p>Campos e pradarias com alta capacidade de fixação de carbono no solo e riqueza extraordinária de aves migratórias.</p>
+                        <div class="biome-species">Espécies-chave: Veado-campeiro, Quero-quero, Araucária.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobre Nós -->
+            <div class="white-panel about-panel">
+                <div class="panel-header">
+                    <h3>Sobre Nós :)</h3>
+                </div>
+                <p>Esse é um site inicializado no nosso projeto integrado.</p>
+                <p>Os participantes do site são: <strong>Ana Julia, Pietro Tommaso e Will Matias</strong>.</p>
+                <p>O projeto está sendo organizado por Pietro Tommaso, seu gmail é <strong>pietro.tommaso@aluno.ifsp.edu.br</strong> para contatar a fins de dúvidas e entre outras coisas.</p>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             PÁGINA 2: BOTÂNICA & CLIMA
+        ========================================================= -->
+        <section id="page-botanica" class="page">
+            <div class="subpage-topbar">
+                <button class="back-btn" onclick="navigateTo('home')">← Voltar para Início</button>
+                <span class="center-badge">Módulo 01</span>
+            </div>
+            <h1 class="page-title">Botânica & Clima</h1>
+
+            <div class="split-layout">
+                <div class="info-stack">
+                    <div class="info-card offset-right">
+                        <h4>🌱 Papel Ecológico no Ecossistema</h4>
+                        <p>Fixação maciça de dióxido de carbono da atmosfera, proteção contra erosão do solo fértil, filtragem natural de aquíferos subterrâneos e abrigo de mais de 80% das espécies terrestres conhecidas.</p>
+                    </div>
+                    <div class="info-card offset-left">
+                        <h4>🌍 Visão Geral & Características</h4>
+                        <p>As florestas tropicais e subtropicais formam o maior ecossistema terrestre do planeta. Suas árvores centenárias capturam radiação solar, reduzem a temperatura do solo em até 8°C e mantêm a umidade equilibrada.</p>
+                    </div>
+                    <div class="info-card offset-right">
+                        <h4>💡 Dicas de Conservação & Curiosidades</h4>
+                        <p>Apoie o plantio de mudas nativas, consuma produtos com certificação sustentável e incentive a criação de reservas e parques ecológicos.</p>
+                    </div>
+                </div>
+
+                <div class="media-column">
+                    <img class="featured-photo" src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80" alt="Árvore frondosa">
+                    <div class="caption-pill">
+                        🌿 Botânica & Clima<br>Florestas Nativas & Regulação Climática
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             PÁGINA 3: HIDROGRAFIA & MARES
+        ========================================================= -->
+        <section id="page-hidrografia" class="page">
+            <div class="subpage-topbar">
+                <button class="back-btn" onclick="navigateTo('home')">← Voltar para Início</button>
+                <span class="center-badge">Módulo 02</span>
+            </div>
+            <h1 class="page-title">Hidrografia & Mares</h1>
+
+            <div class="split-layout">
+                <div class="info-stack">
+                    <div class="info-card offset-right">
+                        <h4>🐠 Papel Ecológico no Ecossistema</h4>
+                        <p>Berçário reprodutivo de milhares de espécies de peixes, crustáceos e moluscos. Recifes de corais protegem as linhas costeiras contra a fúria das tempestades e ressacas marinhas.</p>
+                    </div>
+                    <div class="info-card offset-left">
+                        <h4>🌊 Visão Geral & Características</h4>
+                        <p>Os oceanos cobrem 71% da superfície do planeta Terra. O fitoplâncton marinho realiza fotossíntese produzindo a maior fatia do oxigênio atmosférico mundial e regulando as correntes térmicas globais.</p>
+                    </div>
+                    <div class="info-card offset-right">
+                        <h4>♻️ Dicas de Conservação & Curiosidades</h4>
+                        <p>Reduza o uso de plásticos descartáveis, descarte pilhas e óleos em postos adequados e apoie a preservação de manguezais e restingas.</p>
+                    </div>
+                </div>
+
+                <div class="media-column">
+                    <img class="featured-photo" src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=800&q=80" alt="Fundo do oceano">
+                    <div class="caption-pill">
+                        💧 Hidrografia & Mares<br>Oceanos, Recifes de Coral & Vida Marinha
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             PÁGINA 4: BIOLOGIA DA CONSERVAÇÃO
+        ========================================================= -->
+        <section id="page-conservacao" class="page">
+            <div class="subpage-topbar">
+                <button class="back-btn" onclick="navigateTo('home')">← Voltar para Início</button>
+                <span class="center-badge">Módulo 03</span>
+            </div>
+            <h1 class="page-title">Biologia da Conservação</h1>
+
+            <div class="split-layout">
+                <div class="info-stack">
+                    <div class="info-card offset-right">
+                        <h4>🐝 Papel Ecológico no Ecossistema</h4>
+                        <p>Garante a renovação natural de nutrientes, previne a propagação de pragas na agricultura e assegura a estabilidade de recursos vitais.</p>
+                    </div>
+                    <div class="info-card offset-left">
+                        <h4>🦌 Visão Geral & Características</h4>
+                        <p>A biodiversidade envolve a variedade genética de todos os seres vivos e seus habitats. Nenhuma espécie vive isolada: predadores, presas, decompositores e polinizadores operam em perfeita sintonia numérica.</p>
+                    </div>
+                    <div class="info-card offset-right">
+                        <h4>🛡️ Dicas de Conservação & Curiosidades</h4>
+                        <p>Preserve áreas verdes urbanas, combata o tráfico ilegal de animais silvestres e apoie leis de proteção ambiental.</p>
+                    </div>
+                </div>
+
+                <div class="media-column">
+                    <img class="featured-photo" src="https://images.unsplash.com/photo-1484406566174-9da000fda645?auto=format&fit=crop&w=800&q=80" alt="Cervo na floresta">
+                    <div class="caption-pill">
+                        🦋 Biologia da Conservação<br>Biodiversidade Global & Redes Ecológicas
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             PÁGINA 5: DIVISÃO DOS ANIMAIS (ENCICLOPÉDIA)
+        ========================================================= -->
+        <section id="page-animais" class="page">
+            <div class="subpage-topbar">
+                <button class="back-btn" onclick="navigateTo('home')">← Voltar para Início</button>
+                <span class="center-badge">Enciclopédia • Zoologia</span>
+            </div>
+            <h1 class="page-title">Divisão dos Animais</h1>
+
+            <div class="split-layout">
+                <div class="info-stack">
+                    <div class="info-card">
+                        <h4>🦴 1. Reino Animalia: Vertebrados</h4>
+                        <p>Possuem coluna vertebral e crânio protetor:</p>
+                        <ul>
+                            <li><strong>Peixes:</strong> Respiração branquial, ectotérmicos, nadadeiras (ex: tubarões, salmões).</li>
+                            <li><strong>Anfíbios:</strong> Vida dupla (água/terra), pele úmida e permeável (ex: sapos, salamandras).</li>
+                            <li><strong>Répteis:</strong> Pele queratinizada com escamas, ovos com casca (ex: jacarés, serpentes).</li>
+                            <li><strong>Aves:</strong> Penas, ossos pneumáticos, endotérmicas (ex: araras, águias).</li>
+                            <li><strong>Mamíferos:</strong> Glândulas mamárias, pelos, endotermia avançada (ex: onças, baleias).</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h4>🦋 2. Reino Animalia: Invertebrados</h4>
+                        <p>Representam mais de 95% das espécies animais conhecidas, sem coluna vertebral:</p>
+                        <ul>
+                            <li><strong>Artrópodes:</strong> Exoesqueleto de quitina e patas articuladas (insetos, aracnídeos, crustáceos).</li>
+                            <li><strong>Moluscos:</strong> Corpo mole, geralmente protegido por concha calcária (polvos, caramujos).</li>
+                            <li><strong>Cnidários e Equinodermos:</strong> Águas-vivas, corais, estrelas-do-mar e ouriços.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-stack">
+                    <div class="info-card">

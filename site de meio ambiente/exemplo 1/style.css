@@ -1,0 +1,585 @@
+:root {
+    --bg-pagina: #D3F3D8;
+    --verde-header: #38B266;
+    --verde-botao: #40B86D;
+    --verde-botao-hover: #2E9655;
+    --verde-pilula: #8AE899;
+    --verde-texto-escuro: #164A29;
+    --branco-card: #FFFFFF;
+    --texto-corpo: #334155;
+    --borda-suave: #B7E4C7;
+    --sombra-card: 0 4px 12px rgba(22, 74, 41, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-pagina);
+    color: var(--texto-corpo);
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER / NAVBAR */
+header {
+    background-color: var(--verde-header);
+    padding: 0.75rem 2rem;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.brand-icon {
+    background: white;
+    color: var(--verde-header);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.45rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-btn.active {
+    background: white;
+    color: var(--verde-texto-escuro);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* CONTAINER PRINCIPAL */
+main {
+    max-width: 1050px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.5rem 1.2rem 3rem;
+    flex: 1;
+}
+
+.page {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-title {
+    text-align: center;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--verde-texto-escuro);
+    margin-bottom: 1.2rem;
+}
+
+/* CAIXAS BRANCAS DO LAYOUT */
+.white-panel {
+    background: var(--branco-card);
+    border-radius: 14px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--sombra-card);
+}
+
+.panel-header {
+    margin-bottom: 1rem;
+}
+
+.panel-header h3 {
+    font-size: 1rem;
+    color: #1E293B;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.panel-header p {
+    font-size: 0.82rem;
+    color: #64748B;
+    margin-top: 2px;
+}
+
+/* PÍLULAS DE ESTATÍSTICAS */
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.stat-pill {
+    background: var(--verde-pilula);
+    color: var(--verde-texto-escuro);
+    padding: 0.65rem 1rem;
+    border-radius: 999px;
+    text-align: center;
+    font-size: 0.82rem;
+    font-weight: 700;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* SEÇÃO HERO / 3 CARDS PRINCIPAIS */
+.center-badge {
+    display: inline-block;
+    background: var(--verde-pilula);
+    color: var(--verde-texto-escuro);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.3rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 0.6rem;
+}
+
+.hero-intro {
+    text-align: center;
+    max-width: 720px;
+    margin: 1.5rem auto;
+}
+
+.hero-intro h2 {
+    font-size: 1.35rem;
+    color: #0F172A;
+    margin-bottom: 0.5rem;
+}
+
+.hero-intro p {
+    font-size: 0.85rem;
+    color: #475569;
+}
+
+.three-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 1.8rem;
+}
+
+.topic-card {
+    background: white;
+    border-radius: 14px;
+    padding: 1rem;
+    box-shadow: var(--sombra-card);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease;
+}
+
+.topic-card:hover {
+    transform: translateY(-4px);
+}
+
+.topic-img-wrap {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 175px;
+    cursor: pointer;
+    margin-bottom: 0.9rem;
+}
+
+.topic-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.topic-img-wrap:hover img {
+    transform: scale(1.05);
+}
+
+.img-overlay-hint {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(22, 74, 41, 0.85);
+    color: #A7F3D0;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.topic-card h4 {
+    font-size: 0.88rem;
+    color: #0F172A;
+    margin-bottom: 0.3rem;
+}
+
+.topic-card p {
+    font-size: 0.78rem;
+    color: #475569;
+    margin-bottom: 0.9rem;
+    flex: 1;
+}
+
+.card-footer-btn {
+    background: var(--verde-pilula);
+    color: var(--verde-texto-escuro);
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+}
+
+.card-footer-btn:hover {
+    background: #72DF84;
+}
+
+/* ENCICLOPÉDIA DA NATUREZA (4 BOTÕES) */
+.encyclopedia-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    max-width: 680px;
+    margin: 1rem auto 0.5rem;
+}
+
+.encyc-btn {
+    background: var(--verde-botao);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    font-family: inherit;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(64, 184, 109, 0.3);
+    transition: all 0.2s ease;
+}
+
+.encyc-btn:hover {
+    background: var(--verde-botao-hover);
+    transform: translateY(-2px);
+}
+
+/* 6 GRANDES BIOMAS CONTINENTAIS */
+.biomes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0.9rem;
+}
+
+.biome-box {
+    background: #EBF9EE;
+    border: 1px solid var(--borda-suave);
+    border-radius: 10px;
+    padding: 0.9rem;
+}
+
+.biome-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.4rem;
+}
+
+.biome-top strong {
+    font-size: 0.85rem;
+    color: var(--verde-texto-escuro);
+}
+
+.biome-tag {
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--verde-header);
+    background: white;
+    padding: 2px 8px;
+    border-radius: 999px;
+}
+
+.biome-box p {
+    font-size: 0.76rem;
+    color: #334155;
+    margin-bottom: 0.5rem;
+}
+
+.biome-species {
+    font-size: 0.72rem;
+    color: var(--verde-texto-escuro);
+    font-weight: 600;
+    border-top: 1px dashed #B7E4C7;
+    padding-top: 0.4rem;
+}
+
+/* SOBRE NÓS & RODAPÉ */
+.about-panel p {
+    font-size: 0.85rem;
+    margin-bottom: 0.6rem;
+    color: #334155;
+}
+
+footer {
+    background: white;
+    padding: 1.8rem 1rem;
+    text-align: center;
+    border-top: 2px solid var(--borda-suave);
+    font-size: 0.82rem;
+    color: #475569;
+}
+
+.footer-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.social-badge {
+    width: 30px;
+    height: 30px;
+    border: 1.5px solid #94A3B8;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.75rem;
+    color: #475569;
+    text-decoration: none;
+}
+
+/* LAYOUT DAS PÁGINAS INTERNAS */
+.subpage-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+
+.back-btn {
+    background: white;
+    color: var(--verde-texto-escuro);
+    border: 1px solid var(--borda-suave);
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.back-btn:hover {
+    background: var(--verde-pilula);
+}
+
+.split-layout {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.mb-12 {
+    margin-bottom: 1.2rem;
+}
+
+.info-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.info-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.1rem 1.25rem;
+    box-shadow: var(--sombra-card);
+}
+
+.info-card.offset-left {
+    margin-right: 1.2rem;
+}
+
+.info-card.offset-right {
+    margin-left: 1.2rem;
+}
+
+.info-card h4 {
+    font-size: 0.9rem;
+    color: var(--verde-texto-escuro);
+    margin-bottom: 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.info-card p,
+.info-card li {
+    font-size: 0.82rem;
+    color: #334155;
+}
+
+.info-card ul {
+    padding-left: 1.1rem;
+    margin-top: 0.3rem;
+}
+
+.media-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.featured-photo {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: var(--sombra-card);
+    border: 3px solid white;
+}
+
+.img-compact {
+    height: 170px;
+}
+
+.img-medium {
+    height: 180px;
+}
+
+.img-large-sub {
+    height: 200px;
+}
+
+.caption-pill {
+    background: var(--verde-pilula);
+    color: var(--verde-texto-escuro);
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* CAMADAS OCEÂNICAS / MINI GALERIA DAS PÁGINAS DA ENCICLOPÉDIA */
+.layers-banner {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.2rem;
+    box-shadow: var(--sombra-card);
+    font-size: 0.8rem;
+}
+
+.layers-banner h4 {
+    color: var(--verde-texto-escuro);
+    margin-bottom: 0.5rem;
+}
+
+.layers-banner p {
+    margin-bottom: 0.35rem;
+}
+
+.mini-animal-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    background: white;
+    padding: 8px;
+    border-radius: 12px;
+    box-shadow: var(--sombra-card);
+}
+
+.mini-animal-grid img {
+    width: 100%;
+    height: 68px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .split-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .info-card.offset-left,
+    .info-card.offset-right {
+        margin: 0;
+    }
+
+    .mini-animal-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

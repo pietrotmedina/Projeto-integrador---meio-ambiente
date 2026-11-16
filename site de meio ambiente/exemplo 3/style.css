@@ -1,0 +1,759 @@
+/* ==========================================================================
+   1. DESIGN TOKENS — ESTÉTICA EDITORIAL BOTÂNICA
+   ========================================================================== */
+:root {
+    --bg-paper: #f7f5ef;        /* Papel reciclado quente */
+    --bg-sand: #ede9de;         /* Areia orgânica */
+    --bg-card: #ffffff;
+    --forest-deep: #173123;     /* Verde musgo escuro */
+    --forest-mid: #284b37;      /* Verde folha */
+    --terra: #c85a32;           /* Terracota / Argila */
+    --terra-hover: #a94622;
+    --ink: #1e2420;             /* Tinta carvão */
+    --ink-muted: #57635b;
+    --border-line: #d5cfc0;
+
+    --font-serif: Georgia, 'Times New Roman', serif;
+    --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+    --radius-organic: 36px 8px 36px 8px;
+    --radius-pill: 999px;
+    --transition: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .roman-num, .brand {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1220px;
+    margin: 0 auto;
+}
+
+.section-space {
+    padding: 6rem 0;
+}
+
+.section-tinted {
+    background-color: var(--bg-sand);
+}
+
+/* ==========================================================================
+   2. CABEÇALHO EDITORIAL
+   ========================================================================== */
+.site-header {
+    background-color: rgba(247, 245, 239, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-line);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.brand {
+    font-size: 1.6rem;
+    color: var(--forest-deep);
+    letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.brand-mark {
+    color: var(--terra);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.25rem;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--ink);
+    position: relative;
+    padding: 0.3rem 0;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1.5px;
+    background-color: var(--terra);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--transition);
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.btn-header {
+    border: 1.5px solid var(--forest-deep);
+    padding: 0.5rem 1.35rem;
+    border-radius: var(--radius-pill);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-header:hover {
+    background-color: var(--forest-deep);
+    color: var(--bg-paper);
+}
+
+/* ==========================================================================
+   3. HERO ASSIMÉTRICO & MOLDURA ORGÂNICA
+   ========================================================================== */
+.hero {
+    padding: 4.5rem 0 5.5rem 0;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.eyebrow {
+    display: inline-block;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 700;
+    color: var(--terra);
+    margin-bottom: 1rem;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 4.8vw, 4rem);
+    line-height: 1.08;
+    color: var(--forest-deep);
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: var(--ink-muted);
+    max-width: 520px;
+    margin-bottom: 2.25rem;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 0.95rem 2rem;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.btn-terra {
+    background-color: var(--terra);
+    color: #ffffff;
+}
+
+.btn-terra:hover {
+    background-color: var(--terra-hover);
+    transform: translateY(-3px);
+}
+
+.btn-ghost {
+    border: 1.5px solid var(--border-line);
+    color: var(--forest-deep);
+}
+
+.btn-ghost:hover {
+    border-color: var(--forest-deep);
+    background-color: var(--bg-sand);
+}
+
+/* Moldura em formato de folha/pedra */
+.organic-frame {
+    border-radius: 140px 24px 140px 24px;
+    overflow: hidden;
+    box-shadow: 18px 18px 0px var(--bg-sand);
+    border: 1px solid var(--border-line);
+}
+
+.organic-frame img {
+    width: 100%;
+    height: 470px;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.hero-visual:hover .organic-frame img {
+    transform: scale(1.04);
+}
+
+.hero-visual figcaption {
+    margin-top: 1rem;
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+    font-style: italic;
+    text-align: right;
+}
+
+/* ==========================================================================
+   4. FAIXA DE DADOS (TICKER)
+   ========================================================================== */
+.ticker-banner {
+    background-color: var(--bg-sand);
+    border-top: 1px solid var(--border-line);
+    border-bottom: 1px solid var(--border-line);
+    padding: 1.1rem 0;
+}
+
+.ticker-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.92rem;
+    color: var(--forest-deep);
+}
+
+.separator {
+    color: var(--terra);
+}
+
+/* ==========================================================================
+   5. CABEÇALHO DE SEÇÃO EDITORIAL & BENTO GRID
+   ========================================================================== */
+.editorial-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    margin-bottom: 3.5rem;
+    border-bottom: 2px solid var(--forest-deep);
+}
+
+.editorial-header.centered {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.editorial-header h2 {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    color: var(--forest-deep);
+    line-height: 1.15;
+}
+
+.editorial-header p {
+    max-width: 400px;
+    color: var(--ink-muted);
+    font-size: 0.98rem;
+}
+
+/* Grid Assimétrico (1 card grande à esquerda + 2 empilhados à direita) */
+.bento-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 2.25rem;
+}
+
+.featured-story {
+    grid-row: span 2;
+}
+
+.story-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-line);
+    border-radius: var(--radius-organic);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+}
+
+.story-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 35px rgba(23, 49, 35, 0.08);
+}
+
+.story-media {
+    overflow: hidden;
+    position: relative;
+}
+
+.story-media img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.featured-story .story-media img {
+    height: 360px;
+}
+
+.story-card:hover .story-media img {
+    transform: scale(1.05);
+}
+
+.story-media figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.72));
+    color: #ffffff;
+    font-size: 0.78rem;
+    padding: 1.2rem 1.25rem 0.6rem 1.25rem;
+}
+
+.story-content {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.story-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.9rem;
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+}
+
+.pill {
+    background-color: var(--bg-sand);
+    color: var(--forest-deep);
+    font-weight: 700;
+    padding: 0.25rem 0.8rem;
+    border-radius: var(--radius-pill);
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+}
+
+.story-content h3 {
+    font-size: 1.45rem;
+    color: var(--forest-deep);
+    margin-bottom: 0.75rem;
+    line-height: 1.25;
+}
+
+.featured-story .story-content h3 {
+    font-size: 1.85rem;
+}
+
+.story-content p {
+    color: var(--ink-muted);
+    font-size: 0.96rem;
+}
+
+/* ==========================================================================
+   6. SEÇÃO ESCURA (MANIFESTO + ASIDE FICHA TÉCNICA)
+   ========================================================================== */
+.dark-forest {
+    background-color: var(--forest-deep);
+    color: var(--bg-paper);
+}
+
+.light-header {
+    border-bottom-color: rgba(247, 245, 239, 0.25);
+}
+
+.light-header h2 {
+    color: var(--bg-paper);
+}
+
+.preservation-layout {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 4.5rem;
+    align-items: start;
+}
+
+.manifesto-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.manifesto-list li {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 1.25rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(247, 245, 239, 0.14);
+}
+
+.manifesto-list li:last-child {
+    border-bottom: none;
+}
+
+.roman-num {
+    font-size: 1.6rem;
+    color: var(--terra);
+    border: 1px solid rgba(200, 90, 50, 0.5);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.manifesto-list h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.4rem;
+    color: #ffffff;
+}
+
+.manifesto-list p {
+    color: #c7d2cb;
+    font-size: 0.96rem;
+}
+
+/* Aside como Ficha Botânica */
+.specimen-card {
+    background-color: var(--bg-paper);
+    color: var(--ink);
+    padding: 2.25rem;
+    border-radius: 12px 44px 12px 44px;
+    border: 4px double var(--border-line);
+}
+
+.specimen-tag {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--terra);
+    font-weight: 700;
+}
+
+.specimen-header h3 {
+    font-size: 1.6rem;
+    color: var(--forest-deep);
+    margin: 0.35rem 0 0.5rem 0;
+}
+
+.specimen-header p {
+    font-size: 0.9rem;
+    color: var(--ink-muted);
+    margin-bottom: 1.5rem;
+}
+
+.specimen-dl div {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px dotted var(--border-line);
+    font-size: 0.95rem;
+}
+
+.specimen-dl dt {
+    font-weight: 600;
+}
+
+.specimen-dl dd {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    color: var(--terra);
+}
+
+.specimen-quote {
+    margin-top: 1.75rem;
+    padding: 1.1rem;
+    background-color: var(--bg-sand);
+    border-left: 3px solid var(--terra);
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--forest-deep);
+}
+
+/* ==========================================================================
+   7. TABELA EDITORIAL
+   ========================================================================== */
+.table-frame {
+    overflow-x: auto;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-line);
+    border-radius: 16px;
+}
+
+.editorial-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.editorial-table caption {
+    caption-side: bottom;
+    padding: 0.9rem;
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+    background-color: var(--bg-sand);
+}
+
+.editorial-table th {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    color: var(--forest-deep);
+    background-color: var(--bg-sand);
+    padding: 1.15rem 1.4rem;
+    border-bottom: 2px solid var(--forest-deep);
+}
+
+.editorial-table td {
+    padding: 1.15rem 1.4rem;
+    border-bottom: 1px solid var(--border-line);
+    font-size: 0.95rem;
+}
+
+.editorial-table tbody tr:hover {
+    background-color: rgba(237, 233, 222, 0.45);
+}
+
+.swatch {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+.swatch-blue { background-color: #2563eb; }
+.swatch-red { background-color: #dc2626; }
+.swatch-green { background-color: #16a34a; }
+.swatch-yellow { background-color: #eab308; }
+
+/* ==========================================================================
+   8. FAQ EDITORIAL (<DETAILS>)
+   ========================================================================== */
+.faq-wrapper {
+    max-width: 820px;
+}
+
+.accordion {
+    border-bottom: 1px solid var(--border-line);
+    padding: 1.4rem 0;
+}
+
+.accordion summary {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--forest-deep);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.accordion summary::after {
+    content: '↗';
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    color: var(--terra);
+    transition: transform 0.3s ease;
+}
+
+.accordion[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.accordion p {
+    margin-top: 1rem;
+    color: var(--ink-muted);
+    max-width: 720px;
+}
+
+/* ==========================================================================
+   9. RODAPÉ EDITORIAL
+   ========================================================================== */
+.site-footer {
+    background-color: #102319;
+    color: #d7dfd9;
+    padding: 5rem 0 2.5rem 0;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 4rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    align-items: end;
+}
+
+.brand-footer {
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.footer-statement h2 {
+    font-size: clamp(1.6rem, 3vw, 2.3rem);
+    line-height: 1.2;
+    color: #ffffff;
+    max-width: 520px;
+}
+
+.editorial-form label {
+    display: block;
+    font-size: 0.92rem;
+    margin-bottom: 0.75rem;
+    color: #a9b8ae;
+}
+
+.input-group {
+    display: flex;
+    border-bottom: 2px solid var(--terra);
+    padding-bottom: 0.4rem;
+}
+
+.input-group input {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+    padding: 0.4rem 0;
+}
+
+.input-group button {
+    background-color: var(--terra);
+    color: #ffffff;
+    border: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.input-group button:hover {
+    background-color: var(--terra-hover);
+}
+
+.footer-bottom {
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: #8fa196;
+}
+
+.footer-nav {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.footer-nav a:hover {
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   10. RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 960px) {
+    .hero-grid,
+    .bento-grid,
+    .preservation-layout,
+    .footer-top {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-story {
+        grid-row: auto;
+    }
+
+    .editorial-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .organic-frame {
+        box-shadow: 10px 10px 0px var(--bg-sand);
+    }
+
+    .organic-frame img {
+        height: 340px;
+    }
+}
+
+@media (max-width: 640px) {
+    .nav-links {
+        display: none;
+    }
+
+    .ticker-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .separator {
+        display: none;
+    }
+}
